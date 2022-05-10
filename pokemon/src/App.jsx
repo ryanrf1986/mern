@@ -10,6 +10,9 @@ const Example = (props) => {
       fetch("https://pokeapi.co/api/v2/pokemon/?limit=807")
           .then(response => response.json())
           .then(response => setPeople(response.results))
+      // axios.get("https://pokeapi.co/api/v2/pokemon/?limit807")
+      //     .then(successResponse => console.log("SUCCESS", successResponse.data))
+      //     .catch(errorResponse => console.log("Error", errorResponse))
   };
 
   return (
