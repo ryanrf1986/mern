@@ -4,7 +4,7 @@ import Form from "./Form";
 import { useParams } from "react-router";
 
 const People = () => {
-    const { index} = useParams()
+    const { id} = useParams()
     const [apiState, setAPIState] = useState()
     const [err, setErr] = useState(null)
 
@@ -21,7 +21,7 @@ const People = () => {
                 setErr("these are not the droids you are looking for")
             })
 
-    }, [index])
+    }, [id])
 
     const showPeople = () => {
         return (
@@ -49,6 +49,7 @@ const People = () => {
             <div>
                 <p>{err}</p>
                 <img src="https://static.independent.co.uk/2020/09/13/13/ewan-mcgregor-star-wars-1.jpg?quality=75&width=982&height=726&auto=webp"/>
+                {/* <Image source={{uri: 'https://static.independent.co.uk/2020/09/13/13/ewan-mcgregor-star-wars-1.jpg?quality=75&width=982&height=726&auto=webp'}} /> */}
             </div>
         )
     }
