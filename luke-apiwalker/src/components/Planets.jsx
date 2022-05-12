@@ -4,7 +4,7 @@ import Form from "./Form";
 import { useParams } from "react-router";
 
 const Planets = () => {
-    const { id } = useParams();
+    const { index } = useParams();
     const [apiState, setAPIState] = useState();
     const [err, setErr] = useState(null)
     
@@ -21,7 +21,7 @@ const Planets = () => {
             setAPIState("")
             setErr("these are not the droids you are looking for")
         })
-    }, [id]);
+    }, [index]);
 
     
     const showPlanets = () => {

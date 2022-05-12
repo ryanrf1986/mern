@@ -4,7 +4,7 @@ import Form from "./Form";
 import { useParams } from "react-router";
 
 const People = () => {
-    const { id } = useParams()
+    const { index} = useParams()
     const [apiState, setAPIState] = useState()
     const [err, setErr] = useState(null)
 
@@ -21,7 +21,7 @@ const People = () => {
                 setErr("these are not the droids you are looking for")
             })
 
-    }, [id])
+    }, [index])
 
     const showPeople = () => {
         return (

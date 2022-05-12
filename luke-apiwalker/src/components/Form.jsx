@@ -5,14 +5,14 @@ import {Outlet, useNavigate} from 'react-router-dom'
 import Planets from './Planets'
 
 const Form = () => {
-    const navigate = useNavigate()
-
+    
     const [category, setCategory]= useState("people");
-    const [id, setId]= useState();
+    const [index, setIndex]= useState();
+    const navigate = useNavigate()
 
     const submitHandler = (e) =>{
         e.preventDefault();
-        navigate(`/${category}/${id}`)
+        navigate(`/${category}/${index}`)
 
     }
 
@@ -21,13 +21,13 @@ const Form = () => {
         <div style={{textAlign:'center', marginTop:'25px'}}>
             <form onSubmit={submitHandler}>
                 <strong>Search for:  </strong>
-                <select onChange={(event) => setCategory(event.target.value)}  name="category" id="">
+                <select name="category" id="" onChange={(event) => setCategory(event.target.value)}  >
                     <option value="planets">Planets</option>
                     <option value="people">People</option>
                 </select>
                 <label style={{marginLeft: '20px'}}>
                     <strong>       Id:   </strong>
-                    <input onChange={(event) => setId(event.target.value)} type="numbers" name="id"/>
+                    <input type="numbers" name="id" onChange={(event) => setIndex(event.target.value)} />
                 </label>
                 <button style={{backgroundColor:'blue', color:'white', borderRadius:'10px', marginLeft:'10px'}}>Search</button>
             </form>
