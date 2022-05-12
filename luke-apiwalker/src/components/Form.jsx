@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import Display from './People'
-import fetchPeople from './People'
+import People from './People'
 import {Outlet, useNavigate} from 'react-router-dom'
+import Planets from './Planets'
 
-const Search = () => {
+const Form = () => {
     const navigate = useNavigate()
 
     const [category, setCategory]= useState("people");
@@ -18,18 +18,18 @@ const Search = () => {
 
 
     return(
-        <div>
+        <div style={{textAlign:'center', marginTop:'25px'}}>
             <form onSubmit={submitHandler}>
-                Search for: 
+                <strong>Search for:  </strong>
                 <select onChange={(event) => setCategory(event.target.value)}  name="category" id="">
                     <option value="planets">Planets</option>
                     <option value="people">People</option>
                 </select>
-                <label>
-                    Id:
-                    <input onChange={(event) => setCategory(event.target.value)} type="number" name="index"/>
+                <label style={{marginLeft: '20px'}}>
+                    <strong>       Id:   </strong>
+                    <input onChange={(event) => setId(event.target.value)} type="numbers" name="id"/>
                 </label>
-                <button>Search</button>
+                <button style={{backgroundColor:'blue', color:'white', borderRadius:'10px', marginLeft:'10px'}}>Search</button>
             </form>
             <Outlet/>
         </div>
