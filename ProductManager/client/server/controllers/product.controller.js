@@ -30,16 +30,17 @@ module.exports.findOneSingleProduct = (req, res) => {
 
 
 module.exports.updateOne = (req, res) => {
-  Product.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
-    .then((updatedProduct) => res.json(updatedProduct))
+  console.log(req.body)
+  Product.findOneAndUpdate({ _id: req.params.product_id }, req.body, { new: true })
+    .then(updatedProduct => res.json(updatedProduct))
     .catch((err) =>
       res.status(400).json({ message: "Something went wrong", err })
     );
 };
 
 module.exports.deleteAnExistingProduct = (req, res) => {
-  Product.deleteOne({ _id: req.params.id })
-    .then((delResult) => res.json(delResult))
+  Product.deleteOne({ _id: req.params.product_id })
+    .then(result => res.json({result}))
     .catch((err) =>
       res.status(400).json({ message: "Something went wrong", err })
     );

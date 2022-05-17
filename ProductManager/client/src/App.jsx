@@ -1,7 +1,8 @@
 import './App.css';
 import Main from './views/Main';
-import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Detail from './views/Detail'
+import Edit from './views/Edit'
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/:product_id" element={<Detail />} />
+        <Route path='/:product_id/edit' element={<Edit />} />
       </Routes>
     </BrowserRouter>
   );

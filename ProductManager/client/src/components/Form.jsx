@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
+
 const Form = (props) => {
     // DECLARE STATE
     const [title, setTitle] = useState("")
@@ -8,9 +9,10 @@ const Form = (props) => {
     const [description, setDescription] = useState("")
 
     const {refresh} = props
+    
 
     // HANDLER FUNCTIONS
-    const submitHandler = event => {
+    const createHandler = event => {
         event.preventDefault()
         // CREATE AN OBJECT WITH THE PRODUCT INFO
         const productObj = {
@@ -34,7 +36,7 @@ const Form = (props) => {
     return (
         <fieldset>
             {/* <legend>FormComponent.jsx</legend> */}
-            <form onSubmit={submitHandler}>
+            <form onSubmit={createHandler}>
                 <p>
                     Title:
                     <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} value={title}/>
