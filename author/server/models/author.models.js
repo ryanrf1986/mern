@@ -1,14 +1,16 @@
 const mongoose = require("mongoose");
 
 const AuthorSchema = mongoose.Schema({
-    Name:{
-        type: 'string'},
+    name:{
+        type: 'string',
     // price: {
     //     type: 'number'
     // },
     // description: {
     //     type: 'string'
     // },
+    required:[true, "NAME IS REQUIRED"],
+    minLength:[3, "NAME MUST BE AT LEAST 3 CHARACTERS"]}
 },
 
 {timestamps:true})

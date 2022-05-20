@@ -16,4 +16,4 @@ const AllMyUserRoutes = require("./server/routes/user.routes");
 AllMyUserRoutes(app);
 
 // 5. RUN EXPRESS SERVER
-app.listen(port, () => console.log(`The server is all fired up on port ${port}`));
+app.listen(port, () => console.log(`Locked and Loaded ${port}`));
