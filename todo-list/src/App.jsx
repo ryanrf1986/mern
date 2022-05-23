@@ -66,12 +66,7 @@ function App() {
         return (
           <div
             key={i}>
-            <input onChange={(e) => {
-              handleTodoComplete(i);
-            }}
-              checked={todo.complete}
-              type="checkbox" />
-            <span className={todoClasses.join(" ")}>{todo.text}</span>
+            
             <button onClick={(e) => {
               handleTodoDelete(i);
             }}>Delete</button>
